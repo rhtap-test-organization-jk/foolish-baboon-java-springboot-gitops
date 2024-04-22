@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: foolish-baboon-java-springboot-gitops
+  description: This is GitOps manifest for foolish-baboon-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: foolish-baboon-java-springboot
+    janus-idp.io/tekton: foolish-baboon-java-springboot 
+    backstage.io/kubernetes-id: foolish-baboon-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:foolish-baboon-java-springboot
